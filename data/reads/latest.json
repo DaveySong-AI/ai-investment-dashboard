@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-07",
+  "items": [
+    {"type":"official","date":"2026-07-29","publisher":"SK hynix","title":{"zh":"SK hynix 2Q26 财报：AI 存储器需求与 HBM4 量产","en":"SK hynix 2Q26 results: AI-memory demand and HBM4 volume ramp"},"summary":{"zh":"一手业绩披露；用于核对高附加值 DRAM / HBM 的需求、供给和资本开支表述。","en":"Primary earnings disclosure for verifying demand, supply and capex commentary in high-value DRAM/HBM."},"url":"https://news.skhynix.com/en/q2-2026-business-results/"},
+    {"type":"official","date":"2026-06-24","publisher":"Micron","title":{"zh":"Micron FY26 Q3：存储器在 AI 时代的收入与现金流验证","en":"Micron FY26 Q3: revenue and cash-flow evidence for memory in the AI era"},"summary":{"zh":"一手业绩披露与电话会材料；用于检查 HBM、服务器 DRAM、NAND 与长期供货安排。","en":"Primary earnings disclosure and call materials covering HBM, server DRAM, NAND and long-term supply arrangements."},"url":"https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx"},
+    {"type":"official","date":"2026-09-07","publisher":"Roundhill Investments","title":{"zh":"DRAM 基金：方法、持仓与风险披露","en":"DRAM ETF: methodology, holdings and risk disclosure"},"summary":{"zh":"基金官方页；查看实际持仓、费用、风险与组合是否仍符合“存储器权益”这一研究假设。","en":"Official fund page for actual holdings, fees and risk disclosures; use it to check whether the portfolio still matches the memory-equity thesis."},"url":"https://www.roundhillinvestments.com/etf/dram/"},
+    {"type":"analysis","date":"2026-02-16","publisher":"Bloomberg Odd Lots","title":{"zh":"AI 如何改变 DRAM 供需：行业访谈","en":"How AI is changing DRAM supply and demand: industry interview"},"summary":{"zh":"外部分析资料，适合建立问题清单；不作为单独的事实来源或交易结论。","en":"External analysis useful for forming questions; not a standalone source of facts or a trading conclusion."},"url":"https://www.bloomberg.com/news/videos/2026-02-16/ray-wang-on-how-ai-is-causing-dram-prices-to-surge-video"}
+  ]
+}

@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "date": "2026-09-07",
-  "session": "Cross-market update · US Labor Day",
-  "headline": "财报强，休市日不做方向判断。",
-  "summary": "美国股市因 Labor Day 休市。本次更新不填造价数据，而是把研究重心放在最近已披露业绩：云与 AI 收入增长继续强劲，但资本开支、供给约束与自由现金流转换仍是下一阶段最重要的验证项。",
-  "regime": {"label":"Evidence-rich","tone":"blue","title":"盈利兑现有证据，估值方向留给下一个交易日。","detail":"Alphabet、Microsoft、Apple 的最新披露均显示核心业务与 AI 需求仍具韧性；腾讯则呈现“广告/云增长与 AI 基础设施投入同步加速”的特征。休市日不把基本面信息误写成市场价格信号。"},
+  "session": {"zh":"跨市场更新 · 美国劳动节","en":"Cross-market update · US Labor Day"},
+  "headline": {"zh":"财报强，休市日不做方向判断。","en":"Strong earnings, but no market call on a holiday."},
+  "summary": {"zh":"美国股市因 Labor Day 休市。本次更新不填造价数据，而是把研究重心放在最近已披露业绩：云与 AI 收入增长继续强劲，但资本开支、供给约束与自由现金流转换仍是下一阶段最重要的验证项。","en":"US equities are closed for Labor Day. This update does not invent a price signal; it focuses on recent results instead. Cloud and AI revenue remain strong, while capex, supply constraints and free-cash-flow conversion are the next key tests."},
+  "regime": {"label":{"zh":"证据充分","en":"Evidence-rich"},"tone":"blue","title":{"zh":"盈利兑现有证据，估值方向留给下一个交易日。","en":"Earnings have evidence; leave valuation direction to the next trading day."},"detail":{"zh":"Alphabet、Microsoft、Apple 的最新披露均显示核心业务与 AI 需求仍具韧性；腾讯则呈现“广告/云增长与 AI 基础设施投入同步加速”的特征。休市日不把基本面信息误写成市场价格信号。","en":"Recent disclosures from Alphabet, Microsoft and Apple show resilient core businesses and AI demand. Tencent shows advertising/cloud growth alongside faster AI infrastructure spending. A holiday is not a price signal."}},
   "markets": [
-    {"label":"US Equities","value":"Closed","change":"Labor Day","direction":"neutral"},
-    {"label":"Apple FY26 Q3","value":"$109.4B","change":"Revenue +16% YoY","direction":"positive"},
-    {"label":"Alphabet Cloud","value":"$24.8B","change":"Revenue +82% YoY","direction":"positive"},
-    {"label":"Microsoft FY26 Q4","value":"$90.0B","change":"Revenue +18% YoY","direction":"positive"}
+    {"label":{"zh":"美国股票","en":"US Equities"},"value":"Closed","change":{"zh":"劳动节休市","en":"Labor Day"},"direction":"neutral"},
+    {"label":"Apple FY26 Q3","value":"$109.4B","change":{"zh":"营收同比 +16%","en":"Revenue +16% YoY"},"direction":"positive"},
+    {"label":"Alphabet Cloud","value":"$24.8B","change":{"zh":"营收同比 +82%","en":"Revenue +82% YoY"},"direction":"positive"},
+    {"label":"Microsoft FY26 Q4","value":"$90.0B","change":{"zh":"营收同比 +18%","en":"Revenue +18% YoY"},"direction":"positive"}
   ],
   "drivers": [
-    {"title":"US market holiday","detail":"NYSE observes Labor Day on September 7, 2026; no US cash-equity close is available.","impact":"Context","direction":"neutral"},
-    {"title":"Cloud AI demand","detail":"Alphabet reported Google Cloud revenue up 82% YoY, led by enterprise AI infrastructure and solutions.","impact":"High","direction":"positive"},
-    {"title":"Capital intensity","detail":"Tencent stepped up AI infrastructure investment; the research question is now return on that spend, not only demand.","impact":"High","direction":"neutral"}
+    {"title":{"zh":"美国市场休市","en":"US market holiday"},"detail":{"zh":"NYSE 在 2026 年 9 月 7 日劳动节休市，没有美国现货股票收盘数据。","en":"NYSE observes Labor Day on September 7, 2026; no US cash-equity close is available."},"impact":{"zh":"背景","en":"Context"},"direction":"neutral"},
+    {"title":{"zh":"云端 AI 需求","en":"Cloud AI demand"},"detail":{"zh":"Alphabet 披露 Google Cloud 营收同比增长 82%，由企业 AI 基础设施与解决方案带动。","en":"Alphabet reported Google Cloud revenue up 82% YoY, led by enterprise AI infrastructure and solutions."},"impact":{"zh":"高","en":"High"},"direction":"positive"},
+    {"title":{"zh":"资本强度","en":"Capital intensity"},"detail":{"zh":"腾讯加大 AI 基础设施投入；研究问题已转向这笔投入的回报，而非仅仅需求。","en":"Tencent stepped up AI infrastructure investment; the research question is now return on that spend, not only demand."},"impact":{"zh":"高","en":"High"},"direction":"neutral"}
   ],
   "sources": [
     {"label":"NYSE · 2026 holiday calendar","url":"https://www.nyse.com/trade/hours-calendars"},

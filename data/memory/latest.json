@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-07",
+  "instrument": {
+    "label": {"zh":"用户基准","en":"User reference"},
+    "name": {"zh":"Roundhill Memory ETF（DRAM；用户输入：DRAM.A）","en":"Roundhill Memory ETF (DRAM; user reference: DRAM.A)"},
+    "description": {"zh":"该基金并非纯 DRAM 现货价格指数，而是主动管理的全球存储器股票组合，覆盖 HBM、DRAM、NAND、SSD 与相关存储公司。它的回报会受成分股权重、估值、汇率与再平衡影响。","en":"This is not a pure DRAM spot-price index. It is an actively managed global memory-equity portfolio spanning HBM, DRAM, NAND, SSD and related storage companies; weights, valuation, FX and rebalancing matter."},
+    "url": "https://www.roundhillinvestments.com/etf/dram/"
+  },
+  "signals": [
+    {"label":{"zh":"需求","en":"Demand"},"value":{"zh":"AI 服务器内存仍强","en":"AI-server memory remains firm"},"detail":{"zh":"HBM、服务器 DRAM 与企业级 SSD 是当前最重要的高附加值需求端。","en":"HBM, server DRAM and enterprise SSD remain the key high-value demand vectors."}},
+    {"label":{"zh":"供给","en":"Supply"},"value":{"zh":"先进节点 / 封装是约束","en":"Advanced nodes / packaging constrain"},"detail":{"zh":"HBM 的堆叠、良率与先进封装使“有晶圆”不等同于“有可销售的高端供给”。","en":"HBM stacking, yield and advanced packaging mean wafer availability is not the same as saleable high-end supply."}},
+    {"label":{"zh":"市场结构","en":"Market structure"},"value":{"zh":"集中度高，周期性仍在","en":"Concentrated, still cyclical"},"detail":{"zh":"AI 可改善产品组合，但不能消除库存、扩产与价格回落构成的周期风险。","en":"AI can improve mix but does not remove the cycle of inventory, capacity additions and price reversals."}}
+  ],
+  "map": [
+    {"title":{"zh":"HBM：AI 的内存瓶颈","en":"HBM: the AI memory bottleneck"},"detail":{"zh":"训练与推理加速器需要高带宽和高能效内存；真正要验证的是良率、认证、封装与长期供货，而不是只看技术参数。","en":"Training and inference accelerators need high-bandwidth, efficient memory. Verify yield, qualification, packaging and long-term supply—not specifications alone."},"sources":[{"label":{"zh":"SK hynix 2Q26 业绩","en":"SK hynix 2Q26 results"},"url":"https://news.skhynix.com/en/q2-2026-business-results/","type":"official"}]},
+    {"title":{"zh":"服务器 DRAM：从“位出货”到“每 bit 价值”","en":"Server DRAM: from bit shipments to value per bit"},"detail":{"zh":"更高容量与更高规格会抬升单位价值，但若新增供给和客户库存先于终端需求，价格仍可能回撤。","en":"Higher capacities and specifications can lift value per bit, but price can still reverse if new supply and customer inventory outrun end demand."},"sources":[{"label":{"zh":"Micron FY26 Q3 业绩电话会材料","en":"Micron FY26 Q3 prepared remarks"},"url":"https://investors.micron.com/static-files/631b1a32-5537-46ae-8f40-82e42fc79dfe","type":"official"}]},
+    {"title":{"zh":"NAND / 存储：AI 并非单一驱动","en":"NAND / storage: AI is not the only driver"},"detail":{"zh":"企业 SSD 受益于数据中心，但客户端与消费电子仍会影响总体库存、ASP 与经营杠杆。","en":"Enterprise SSD benefits from data centers, while client and consumer demand still influence inventory, ASPs and operating leverage."},"sources":[{"label":{"zh":"DRAM 基金说明书","en":"DRAM prospectus"},"url":"https://www.roundhillinvestments.com/assets/pdfs/dram_summary_prospectus.pdf","type":"official"}]}
+  ],
+  "indexView": {
+    "title":{"zh":"持有的是“全球存储器权益敞口”，不是单一 DRAM 价格曲线。","en":"You own global memory-equity exposure, not a single DRAM price curve."},
+    "detail":{"zh":"DRAM 的公开资料显示，组合会覆盖 Samsung、SK hynix、Micron 等龙头，并包括 NAND / 存储公司；单一成分股上限、韩国权重和季度再平衡都会让基金表现与某一条现货报价存在偏差。看板应追踪基本面，也应持续查看基金的实际持仓页。","en":"DRAM’s public materials show exposure to leaders such as Samsung, SK hynix and Micron alongside NAND/storage companies. Single-name caps, Korean exposure and quarterly rebalancing can make performance diverge from a spot-price series. Track fundamentals and the fund’s actual holdings."},
+    "sources":[{"label":{"zh":"Roundhill DRAM 基金页面与持仓","en":"Roundhill DRAM fund page & holdings"},"url":"https://www.roundhillinvestments.com/etf/dram/","type":"official"},{"label":{"zh":"DRAM 摘要说明书","en":"DRAM summary prospectus"},"url":"https://www.roundhillinvestments.com/assets/pdfs/dram_summary_prospectus.pdf","type":"official"}]
+  },
+  "watch": [
+    {"title":{"zh":"HBM4 的量产、良率与客户认证","en":"HBM4 volume, yield and customer qualification"},"detail":{"zh":"技术领先必须变成可持续出货和利润率，才会影响行业盈利中枢。","en":"Technology leadership must translate into durable shipments and margins to lift industry earnings power."},"impact":{"zh":"高","en":"High"},"direction":"positive"},
+    {"title":{"zh":"扩产与库存是否重新累积","en":"Whether capacity and inventory rebuild"},"detail":{"zh":"这通常比短期乐观需求叙事更早决定存储器周期的拐点。","en":"This often determines the memory-cycle inflection earlier than optimistic near-term demand narratives."},"impact":{"zh":"高","en":"High"},"direction":"neutral"},
+    {"title":{"zh":"DRAM 实际持仓与权重变化","en":"Actual DRAM holdings and weight changes"},"detail":{"zh":"基金为主动管理，至少按季度核对成分与地域集中度。","en":"The ETF is actively managed; verify constituents and geographic concentration at least quarterly."},"impact":{"zh":"中","en":"Medium"},"direction":"neutral"}
+  ],
+  "risks": [
+    {"title":{"zh":"周期反转","en":"Cycle reversal"},"detail":{"zh":"价格、库存和扩产的反向变化可能压缩收入与利润。","en":"A reversal in pricing, inventory and capacity can compress revenue and profit."}},
+    {"title":{"zh":"集中度与地域风险","en":"Concentration and geography"},"detail":{"zh":"组合可能集中于少数韩国、美国与台湾的存储器企业。","en":"The portfolio can be concentrated in a small group of Korean, U.S. and Taiwanese memory companies."}},
+    {"title":{"zh":"基金结构风险","en":"Fund-structure risk"},"detail":{"zh":"主动管理、季度再平衡、汇率与衍生品敞口都可能造成与直觉中的“DRAM 指数”不同的表现。","en":"Active management, quarterly rebalancing, FX and derivatives can make performance differ from an intuitive ‘DRAM index.’"}}
+  ]
+}

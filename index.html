@@ -17,16 +17,18 @@
   <header class="topbar">
     <a class="brand" href="#today" aria-label="Atlas 首页"><span class="brand-mark">A</span><span>Atlas</span></a>
     <nav aria-label="主导航">
-      <a href="#today" data-route="today">Today</a>
-      <a href="#watchlist" data-route="watchlist">Watchlist</a>
-      <a href="#stock/AAPL" data-route="stock">Stock Detail</a>
-      <a href="#history" data-route="history">History</a>
-      <a href="#opportunities" data-route="opportunities">AI Opportunities</a>
+      <a href="#today" data-route="today" data-i18n="today">今日</a>
+      <a href="#watchlist" data-route="watchlist" data-i18n="watchlist">自选股</a>
+      <a href="#stock/AAPL" data-route="stock" data-i18n="stock">公司研究</a>
+      <a href="#memory" data-route="memory" data-i18n="memory">内存行业</a>
+      <a href="#opportunities" data-route="opportunities" data-i18n="opportunities">AI 机会</a>
+      <a href="#history" data-route="history" data-i18n="history">历史</a>
+      <a href="#reads" data-route="reads" data-i18n="reads">阅读</a>
     </nav>
-    <div class="top-actions"><span class="status"><i></i> Snapshot</span><button id="themeToggle" class="icon-button" aria-label="切换主题"></button></div>
+    <div class="top-actions"><span class="status"><i></i><span data-i18n="snapshot">研究快照</span></span><button id="languageToggle" class="language-button" aria-label="Switch to English">EN</button><button id="themeToggle" class="icon-button" aria-label="切换主题"></button></div>
   </header>
   <main id="app"><div class="loading">正在载入研究数据…</div></main>
-  <footer><span>Atlas Research · Evidence before opinion.</span><span>仅供研究，不构成投资建议</span></footer>
+  <footer><span>Atlas Research · Evidence before opinion.</span><span data-i18n="notAdvice">仅供研究，不构成投资建议</span></footer>
   <script type="module" src="assets/app.js"></script>
 </body>
 </html>

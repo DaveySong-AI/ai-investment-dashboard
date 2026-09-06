@@ -9,6 +9,10 @@
 - **Stock Detail** — 可证伪的投资逻辑、催化剂、风险与证据时间线
 - **History** — 按日期读取不可变的每日快照
 - **AI Opportunities** — 跨价值链的主题地图
+- **Memory / 内存行业** — 以 DRAM 为基准，追踪 HBM、DRAM、NAND、供给与周期风险
+- **Reading / 阅读** — 将一手资料、新闻与外部分析分开列示，并链接原文
+
+右上角可切换完整中文 / English 内容；阅读语言偏好会保存在浏览器中。
 
 ## 本地预览
 
@@ -29,9 +33,12 @@ npm run serve
 4. 新增 `reports/YYYY-MM-DD.md`，作为人类可读、可审计的日报。
 5. 只有公司 thesis 发生实质变化时才更新 `data/stocks/index.json`。
 6. 每月或发生结构变化时更新 `data/opportunities.json`。
-7. 执行 `npm run validate`，提交并推送。推送后 Pages workflow 自动部署。
+7. 更新 `data/memory/latest.json`（内存研究）及 `data/reads/latest.json`（外部阅读）。
+8. 执行 `npm run validate`，提交并推送。推送后 Pages workflow 自动部署。
 
-所有 JSON 均含 `schemaVersion`。自动任务应保留历史文件，不覆写过去日期；数据项需要携带可访问的一级来源 URL。
+所有 JSON 均含 `schemaVersion`。自动任务应保留历史文件，不覆写过去日期；数据项需要携带可访问的一手来源 URL。面向用户的可变文字应采用 `{ "zh": "…", "en": "…" }`，以维护完整双语内容；链接、代码、日期与数值保持为共享字段。
+
+`Investment thesis` 在界面中显示为“投资逻辑”：这是看板长期维护、可被新证据推翻的判断；外部新闻、财报和分析文章均应作为带链接的证据，而不是与投资逻辑混写。
 
 ## 每天 07:30 云端任务建议
 
