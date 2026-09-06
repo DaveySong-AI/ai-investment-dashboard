@@ -1,0 +1,5 @@
+{"schemaVersion":1,"asOf":"2025-01-31","themes":[
+  {"horizon":"Now","title":"AI infrastructure efficiency","thesis":"The next leg rewards lower inference cost, higher utilization and differentiated silicon—not capacity alone.","companies":["GOOGL","MSFT"]},
+  {"horizon":"12–24m","title":"Distribution becomes the moat","thesis":"Products with existing user intent and workflow access can monetize models more efficiently.","companies":["AAPL","GOOGL","0700.HK"]},
+  {"horizon":"Watch","title":"AI-native consumer IP","thesis":"Generative tools may accelerate content production, but taste, scarcity and community remain scarce assets.","companies":["9992.HK"]}
+]}

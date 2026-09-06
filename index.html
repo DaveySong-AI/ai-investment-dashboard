@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>Atlas — AI Investment Research</title>
+  <meta name="description" content="A calm, evidence-first AI investment research dashboard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#today" aria-label="Atlas 首页"><span class="brand-mark">A</span><span>Atlas</span></a>
+    <nav aria-label="主导航">
+      <a href="#today" data-route="today">Today</a>
+      <a href="#watchlist" data-route="watchlist">Watchlist</a>
+      <a href="#stock/AAPL" data-route="stock">Stock Detail</a>
+      <a href="#history" data-route="history">History</a>
+      <a href="#opportunities" data-route="opportunities">AI Opportunities</a>
+    </nav>
+    <div class="top-actions"><span class="status"><i></i> Snapshot</span><button id="themeToggle" class="icon-button" aria-label="切换主题"></button></div>
+  </header>
+  <main id="app"><div class="loading">正在载入研究数据…</div></main>
+  <footer><span>Atlas Research · Evidence before opinion.</span><span>仅供研究，不构成投资建议</span></footer>
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>
