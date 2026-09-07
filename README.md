@@ -5,6 +5,7 @@
 ## 页面
 
 - **Today** — 市场状态、关键指标、驱动因素与核心观察名单
+- **AI Briefing** — 以一份可审计的双语简报连接重要 AI 动态与一手来源
 - **Watchlist** — AAPL、GOOGL、MSFT、0700.HK、9992.HK
 - **Stock Detail** — 可证伪的投资逻辑、催化剂、风险与证据时间线
 - **History** — 按日期读取不可变的每日快照
@@ -35,6 +36,8 @@ npm run serve
 6. 每月或发生结构变化时更新 `data/opportunities.json`。
 7. 更新 `data/memory/latest.json`（内存研究）及 `data/reads/latest.json`（外部阅读）。
 8. 执行 `npm run validate`，提交并推送。推送后 Pages workflow 自动部署。
+
+AI Briefing 另有唯一的 canonical 格式：`data/ai-briefings/YYYY-MM-DD.json` 是某日期的双语原始记录，`reports/ai-briefings/YYYY-MM-DD.md` 是对应的可审计文本；`latest.json` 必须与索引中最新一期完全一致。编辑规范见 [`docs/AI_BRIEFING_EDITORIAL.md`](docs/AI_BRIEFING_EDITORIAL.md)，未来 Codex Publisher 的执行约定见 [`docs/AI_BRIEFING_PUBLISHER.md`](docs/AI_BRIEFING_PUBLISHER.md)。后者只是预留接口，不会创建或调度任务。
 
 所有 JSON 均含 `schemaVersion`。自动任务应保留历史文件，不覆写过去日期；数据项需要携带可访问的一手来源 URL。面向用户的可变文字应采用 `{ "zh": "…", "en": "…" }`，以维护完整双语内容；链接、代码、日期与数值保持为共享字段。
 
