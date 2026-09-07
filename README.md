@@ -37,7 +37,7 @@ npm run serve
 7. 更新 `data/memory/latest.json`（内存研究）及 `data/reads/latest.json`（外部阅读）。
 8. 执行 `npm run validate`，提交并推送。推送后 Pages workflow 自动部署。
 
-AI Briefing 另有唯一的 canonical 格式：`data/ai-briefings/YYYY-MM-DD.json` 是某日期的双语原始记录，`reports/ai-briefings/YYYY-MM-DD.md` 是对应的可审计文本；`latest.json` 仅是指向最新日期的指针，避免产生第二份内容副本。编辑规范见 [`docs/AI_BRIEFING_EDITORIAL.md`](docs/AI_BRIEFING_EDITORIAL.md)，当前本地 Codex 定时 Publisher 的执行约定见 [`docs/AI_BRIEFING_PUBLISHER.md`](docs/AI_BRIEFING_PUBLISHER.md)。
+AI Briefing 另有唯一的 canonical 格式：`data/ai-briefings/YYYY-MM-DD.json` 是某日期的双语原始记录，`reports/ai-briefings/YYYY-MM-DD.md` 是对应的可审计文本；`latest.json` 仅是指向最新日期的指针，避免产生第二份内容副本。每日研究范围与内容提示词见 [`docs/AI_BRIEFING_DAILY_PROMPT.md`](docs/AI_BRIEFING_DAILY_PROMPT.md)，编辑规范见 [`docs/AI_BRIEFING_EDITORIAL.md`](docs/AI_BRIEFING_EDITORIAL.md)，当前本地 Codex 定时 Publisher 的执行约定见 [`docs/AI_BRIEFING_PUBLISHER.md`](docs/AI_BRIEFING_PUBLISHER.md)。
 
 所有 JSON 均含 `schemaVersion`。自动任务应保留历史文件，不覆写过去日期；数据项需要携带可访问的一手来源 URL。面向用户的可变文字应采用 `{ "zh": "…", "en": "…" }`，以维护完整双语内容；链接、代码、日期与数值保持为共享字段。
 

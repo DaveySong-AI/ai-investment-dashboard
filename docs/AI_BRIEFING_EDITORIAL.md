@@ -1,4 +1,6 @@
-# Atlas AI Briefing：唯一格式与编辑规范
+# Atlas AI Briefing：格式与编辑规范
+
+每日研究范围与内容提示词见 [`AI_BRIEFING_DAILY_PROMPT.md`](AI_BRIEFING_DAILY_PROMPT.md)。本文件只规定结构、来源纪律与发布门槛。
 
 ## 发布单位
 

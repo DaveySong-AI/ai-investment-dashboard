@@ -8,7 +8,7 @@ On each publishing day, research the preceding 24 hours of material AI developme
 
 ## Required order of operations
 
-1. Read [`AI_BRIEFING_EDITORIAL.md`](AI_BRIEFING_EDITORIAL.md) and the current `data/ai-briefings/index.json` before drafting.
+1. Read [`AI_BRIEFING_DAILY_PROMPT.md`](AI_BRIEFING_DAILY_PROMPT.md), [`AI_BRIEFING_EDITORIAL.md`](AI_BRIEFING_EDITORIAL.md) and the current `data/ai-briefings/index.json` before drafting.
 2. Define the ISO 8601 coverage window ending at the run's `asOf` time. Do not claim that an item occurred in the window unless its source supports that timing.
 3. Check first-party announcements from the designated companies before using secondary reporting. Keep source URLs beside the claims they support.
 4. Separate verified fact, context, and editorial analysis in the JSON fields. Do not turn a source's forecast, marketing claim, or opinion into a fact.
