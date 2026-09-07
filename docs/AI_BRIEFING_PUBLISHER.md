@@ -1,6 +1,6 @@
 # AI Briefing Publisher contract
 
-This document is the hand-off contract for the future **GitHub Actions + model API** publisher. It does not create or schedule that workflow, and no API key is stored in this repository.
+This document is the operating contract for the scheduled **local Codex publisher**. It uses the Codex desktop task and the machine's existing GitHub access; it does not require a model API key. GitHub Actions remains responsible only for validation and GitHub Pages deployment after the local task pushes a commit.
 
 ## Purpose
 
@@ -19,7 +19,7 @@ On each publishing day, research the preceding 24 hours of material AI developme
    - an updated `data/ai-briefings/index.json`
    - an updated `data/ai-briefings/latest.json` date pointer
 7. Run `npm run validate`. A failed validation means no commit and no update to `latest.json`.
-8. Commit and push only the canonical set of changes. Never rewrite an existing historic issue automatically. The workflow must use an Actions secret (for example `OPENAI_API_KEY`), never a checked-in key or plaintext workflow variable.
+8. Commit and push only the canonical set of changes through the local repository's existing GitHub authentication. Never rewrite an existing historic issue automatically, and never add an API key, access token, or credential to the repository.
 9. Check the repository's Pages deployment after the push. Treat the issue as published only when the deployment succeeds; otherwise report the failure clearly.
 
 ## Boundaries
@@ -27,6 +27,7 @@ On each publishing day, research the preceding 24 hours of material AI developme
 - The publisher must not edit investment dashboard market data, portfolio views, or the site's presentation code.
 - It must not invent a briefing to satisfy a schedule.
 - It must not point `latest.json` at a partial draft.
+- It runs locally: if the machine, Codex, network, or GitHub access is unavailable, it must report the run as not completed rather than attempting a substitute publish path.
 - One date has one canonical issue. Corrections to a historic issue require an explicit human decision and a documented reason.
 
 ## Definition of a successful run
