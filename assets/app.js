@@ -21,6 +21,64 @@ function reads(){const r=state.reads;return `${pageHead({zh:"外部资料",en:"E
 async function briefing(){if(!state.briefIndex)state.briefIndex=await fetch("data/ai-briefings/index.json").then(r=>{if(!r.ok)throw Error("AI briefing index");return r.json()});const idx=state.briefIndex,date=new URLSearchParams(location.hash.split("?")[1]).get("date")||idx.latest,d=await fetch(`data/ai-briefings/${idx.dates.includes(date)?date:idx.latest}.json`).then(r=>{if(!r.ok)throw Error("AI briefing");return r.json()}),isDaily=d.kind==="daily",options=idx.dates.map(x=>`<option ${x===d.date?"selected":""}>${x}</option>`).join(""),statusLabel=isDaily?{zh:"已核实日报",en:"Verified daily"}:d.kind==="weekly-review"?{zh:"一周回顾",en:"Week in review"}:{zh:"学习型样例",en:"Learning edition"},coverage=typeof d.coverage.note==="object"?L(d.coverage.note):`${d.coverage.windowStart} → ${d.coverage.windowEnd}`,radar=d.radar||[];return `${pageHead({zh:"Atlas / AI Intelligence",en:"Atlas / AI Intelligence"},t("briefTitle"),t("briefSub"),`<div class="history-controls"><select class="select" id="briefingDate">${options}</select></div>`)}<div class="brief-meta">${tag(statusLabel,isDaily?"green":"blue")}<span class="date-chip">${d.date}</span><span class="date-chip">${d.readingMinutes} min</span><span class="date-chip">${t("coverage")}: ${esc(coverage)}</span></div><section class="card brief-overview"><p class="eyebrow">${esc(L(d.editionLabel||statusLabel))}</p><h2>${esc(heading(d.headline))}</h2><p>${esc(L(d.summary))}</p>${d.executive?`<div class="briefing-signals"><div><span>${t("signal")}</span><b>${esc(L(d.executive.signal))}</b></div><div><span>${t("watchlistLabel")}</span><b>${esc(L(d.executive.watch))}</b></div></div>`:""}</section><section class="section"><div class="section-title"><h2>${t("focus")}</h2><span>${d.items.length} ${lang==="zh"?"项重点":"stories"}</span></div><div class="briefing-list">${d.items.map(x=>`<article class="card briefing-item">${tag(x.status==="confirmed"?{zh:"已核实",en:"Confirmed"}:x.status==="analysis"?{zh:"分析",en:"Analysis"}:{zh:"背景",en:"Background"},x.status==="confirmed"?"green":x.status==="analysis"?"amber":"blue")}<p class="eyebrow">${esc(L(x.category))}</p><h2>${esc(heading(x.title))}</h2><div class="briefing-fields"><div><h3>${t("what")}</h3><p>${esc(L(x.what))}</p></div><div><h3>${t("why")}</h3><p>${esc(L(x.why))}</p></div><div><h3>${t("implication")}</h3><p>${esc(L(x.implication))}</p></div></div>${sources(x.sources)}</article>`).join("")}</div></section>${radar.length?`<section class="section"><div class="section-title"><h2>${t("radar")}</h2><span>${radar.length} ${lang==="zh"?"条快速扫描":"quick scans"}</span></div><div class="radar-grid">${radar.map(x=>`<article class="card radar-item">${tag(x.status==="confirmed"?{zh:"已核实",en:"Confirmed"}:{zh:"观察",en:"Watch"},x.status==="confirmed"?"green":"amber")}<p class="eyebrow">${esc(L(x.category))}</p><h3>${esc(heading(x.title))}</h3><p>${esc(L(x.summary))}</p>${sources(x.sources||[])}</article>`).join("")}</div></section>`:""}<section class="card briefing-actions"><p class="eyebrow">NEXT STEPS</p><h2>${t("tryToday")}</h2><ol>${d.tryToday.map(x=>`<li>${esc(L(x))}</li>`).join("")}</ol></section>`}
 async function history(){const date=new URLSearchParams(location.hash.split("?")[1]).get("date")||state.history.dates[0];let d=state.daily;if(date!==state.daily.date)d=await fetch(`data/daily/${date}.json`).then(r=>r.json());return `${pageHead({zh:"研究档案",en:"Research archive"},{zh:"历史",en:"History"},{zh:"每天的数据与判断都作为不可变快照保留，方便回看当时我们知道什么、判断了什么。",en:"Keep each day as an immutable snapshot: what we knew and how we interpreted it."},`<div class="history-controls"><select class="select" id="historyDate">${state.history.dates.map(x=>`<option ${x===date?"selected":""}>${x}</option>`).join("")}</select></div>`)}<article class="card history-report"><p class="eyebrow">${esc(d.date)} · ${esc(L(d.session))}</p><h2>${esc(L(d.headline))}</h2><p>${esc(L(d.summary))}</p><h3>${t("marketView")}</h3><p>${esc(L(d.regime.title))} ${esc(L(d.regime.detail))}</p><h3>${t("whatMatters")}</h3><ol>${d.drivers.map(x=>`<li><strong>${esc(L(x.title))}</strong> — ${esc(L(x.detail))}</li>`).join("")}</ol><div class="sources">${sources(d.sources)}</div></article>`}
 function chrome(){document.documentElement.lang=lang==="zh"?"zh-CN":"en";document.title=lang==="zh"?"Atlas — AI 投资研究":"Atlas — AI Investment Research";document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));$("#languageToggle").textContent=lang==="zh"?"EN":"中文";$("#languageToggle").setAttribute("aria-label",lang==="zh"?"Switch to English":"切换为中文")}
-function bind(){document.querySelectorAll("[data-stock]").forEach(el=>el.onclick=()=>location.hash=`stock/${el.dataset.stock}`);const sel=$("#historyDate");if(sel)sel.onchange=()=>location.hash=`history?date=${sel.value}`;const briefSel=$("#briefingDate");if(briefSel)briefSel.onchange=()=>location.hash=`briefing?date=${briefSel.value}`}
+function legacyBind(){}
 async function route(){chrome();const raw=location.hash.slice(1)||"today",[name,arg]=raw.split("?")[0].split("/");document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("active",a.dataset.route===(name==="stock"?"stock":name)));let html;if(name==="briefing")html=await briefing();else if(name==="watchlist")html=watchlist();else if(name==="stock")html=stock(arg);else if(name==="history")html=await history();else if(name==="opportunities")html=opportunities();else if(name==="memory")html=memory();else if(name==="reads")html=reads();else html=today();$("#app").innerHTML=html;bind();scrollTo(0,0)}
 window.addEventListener("hashchange",()=>{document.querySelector(".topbar").classList.remove("menu-open");$("#menuToggle").setAttribute("aria-expanded","false");route()});$("#themeToggle").onclick=()=>{const current=document.documentElement.dataset.theme;document.documentElement.dataset.theme=current==="dark"?"light":"dark";localStorage.setItem("atlas-theme",document.documentElement.dataset.theme)};$("#languageToggle").onclick=()=>{lang=lang==="zh"?"en":"zh";localStorage.setItem("atlas-language",lang);route()};$("#menuToggle").onclick=()=>{const bar=document.querySelector(".topbar"),open=bar.classList.toggle("menu-open");$("#menuToggle").setAttribute("aria-expanded",String(open))};const saved=localStorage.getItem("atlas-theme");if(saved)document.documentElement.dataset.theme=saved;load();
+
+function bind(){
+  document.querySelectorAll("[data-stock]").forEach(el=>el.onclick=()=>location.hash="stock/"+el.dataset.stock);
+  const history=$("#historyDate"),briefingDate=$("#briefingDate");
+  if(history)mountCalendar(history,"history");
+  if(briefingDate)mountCalendar(briefingDate,"briefing");
+}
+
+function mountCalendar(select,route){
+  const dates=Array.from(select.options).map(option=>option.value),selected=select.value;
+  let month=selected.slice(0,7);
+  const control=document.createElement("div"),trigger=document.createElement("button"),panel=document.createElement("div");
+  control.className="calendar-control";
+  trigger.type="button";
+  trigger.className="calendar-trigger";
+  trigger.setAttribute("aria-label",lang==="zh"?"选择日期":"Select date");
+  trigger.setAttribute("aria-expanded","false");
+  trigger.innerHTML='<span class="calendar-symbol" aria-hidden="true">🗓</span><time>'+selected+'</time><span aria-hidden="true">⌄</span>';
+  panel.className="calendar-popover";
+  panel.hidden=true;
+  panel.setAttribute("role","dialog");
+  panel.setAttribute("aria-label",lang==="zh"?"选择日期":"Select date");
+  trigger.onclick=()=>{panel.hidden=!panel.hidden;trigger.setAttribute("aria-expanded",String(!panel.hidden))};
+  control.append(trigger,panel);
+  select.replaceWith(control);
+  const shift=amount=>{const parts=month.split("-").map(Number),next=new Date(parts[0],parts[1]-1+amount,1);month=next.getFullYear()+"-"+String(next.getMonth()+1).padStart(2,"0");draw()};
+  const draw=()=>{
+    panel.replaceChildren();
+    const header=document.createElement("div"),previous=document.createElement("button"),title=document.createElement("strong"),next=document.createElement("button");
+    header.className="calendar-header";
+    previous.type=next.type="button";
+    previous.className=next.className="calendar-nav";
+    previous.textContent="‹";next.textContent="›";
+    previous.setAttribute("aria-label",lang==="zh"?"上个月":"Previous month");
+    next.setAttribute("aria-label",lang==="zh"?"下个月":"Next month");
+    previous.onclick=()=>shift(-1);next.onclick=()=>shift(1);
+    title.textContent=new Intl.DateTimeFormat(lang==="zh"?"zh-CN":"en-US",{year:"numeric",month:"long"}).format(new Date(month+"-01T12:00:00"));
+    header.append(previous,title,next);
+    const weekdays=document.createElement("div");
+    weekdays.className="calendar-weekdays";
+    (lang==="zh"?["日","一","二","三","四","五","六"]:["S","M","T","W","T","F","S"]).forEach(label=>{const day=document.createElement("span");day.textContent=label;weekdays.append(day)});
+    const days=document.createElement("div");
+    days.className="calendar-days";
+    const parts=month.split("-").map(Number),first=new Date(parts[0],parts[1]-1,1),total=new Date(parts[0],parts[1],0).getDate();
+    for(let i=0;i<first.getDay();i++){const blank=document.createElement("span");blank.className="calendar-blank";days.append(blank)}
+    for(let number=1;number<=total;number++){
+      const date=month+"-"+String(number).padStart(2,"0"),day=document.createElement("button"),available=dates.includes(date);
+      day.type="button";day.className="calendar-day"+(available?" available":"")+(date===selected?" selected":"");day.textContent=number;day.disabled=!available;day.setAttribute("aria-label",date);
+      if(date===selected)day.setAttribute("aria-current","date");
+      if(available)day.onclick=()=>location.hash=route+"?date="+date;
+      days.append(day);
+    }
+    const note=document.createElement("p");
+    note.textContent=lang==="zh"?"高亮日期已有研究存档":"Highlighted days have an archived report";
+    panel.append(header,weekdays,days,note);
+  };
+  draw();
+}
