@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-09-11",
+  "asOf": "2026-09-10",
   "instrument": {
     "label": {"zh":"用户基准","en":"User reference"},
     "name": {"zh":"Roundhill Memory ETF（DRAM；用户输入：DRAM.A）","en":"Roundhill Memory ETF (DRAM; user reference: DRAM.A)"},
@@ -8,7 +8,7 @@
     "url": "https://www.roundhillinvestments.com/etf/dram/"
   },
   "signals": [
-    {"label":{"zh":"需求","en":"Demand"},"value":{"zh":"结构性强劲，现货流动性偏弱","en":"Structurally strong, spot liquidity weak"},"detail":{"zh":"TrendForce 估算 2Q26 DRAM 行业收入环比增长 59.5%；9 月 10 日现货页显示 DDR4 8Gb (1Gx8) 3200 日跌 0.09%、DDR5 16Gb (2Gx8) 4800/5600 日跌 0.31%，且买方询价有限。HBM、服务器 DRAM 与企业级 SSD 仍是关键高附加值需求端。","en":"TrendForce estimates 2Q26 DRAM industry revenue rose 59.5% QoQ; its September 10 spot page showed DDR4 8Gb (1Gx8) 3200 down 0.09% and DDR5 16Gb (2Gx8) 4800/5600 down 0.31% amid limited buyer inquiries. HBM, server DRAM and enterprise SSD remain the key high-value demand vectors."}},
+    {"label":{"zh":"需求","en":"Demand"},"value":{"zh":"结构性强劲，现货分化","en":"Structurally strong, spot demand diverges"},"detail":{"zh":"TrendForce 估算 2Q26 DRAM 行业收入环比增长 59.5%；9 月 9 日现货更新同时显示 DDR4 局部订单支撑价格、DDR5 采购量有限。HBM、服务器 DRAM 与企业级 SSD 仍是关键高附加值需求端。","en":"TrendForce estimates 2Q26 DRAM industry revenue rose 59.5% QoQ; its September 9 spot update also shows orders supporting selected DDR4 pricing while DDR5 procurement volumes remain limited. HBM, server DRAM and enterprise SSD remain the key high-value demand vectors."}},
     {"label":{"zh":"供给","en":"Supply"},"value":{"zh":"供给增速仍落后于需求","en":"Supply growth still lags demand"},"detail":{"zh":"TrendForce 指出供应商库存处于历史低位、增量供给主要投向服务器；先进节点迁移、HBM 良率与封装仍是主要约束。","en":"TrendForce says supplier inventories remain historically low and incremental supply is mainly allocated to servers; advanced-node migration, HBM yield and packaging remain key constraints."}},
     {"label":{"zh":"市场结构","en":"Market structure"},"value":{"zh":"集中度高，周期性仍在","en":"Concentrated, still cyclical"},"detail":{"zh":"AI 可改善产品组合，但不能消除库存、扩产与价格回落构成的周期风险。","en":"AI can improve mix but does not remove the cycle of inventory, capacity additions and price reversals."}}
   ],
@@ -24,7 +24,7 @@
   },
   "watch": [
     {"title":{"zh":"HBM4 的量产、良率与客户认证","en":"HBM4 volume, yield and customer qualification"},"detail":{"zh":"技术领先必须变成可持续出货和利润率，才会影响行业盈利中枢。","en":"Technology leadership must translate into durable shipments and margins to lift industry earnings power."},"impact":{"zh":"高","en":"High"},"direction":"positive"},
-    {"title":{"zh":"价格分化与库存是否重建","en":"Pricing divergence and inventory rebuild"},"detail":{"zh":"TrendForce 预计 3Q26 传统 DRAM 合约价环比涨幅放缓至 13%–18%；9 月 10 日现货页显示 DDR4 8Gb (1Gx8) 3200 与 DDR5 16Gb (2Gx8) 4800/5600 分别日跌 0.09% 和 0.31%，交易清淡。继续跟踪先进节点迁移、位供给和客户库存是否先于需求加速。","en":"TrendForce expects conventional DRAM contract-price growth to moderate to 13%–18% QoQ in 3Q26; its September 10 spot page showed DDR4 8Gb (1Gx8) 3200 and DDR5 16Gb (2Gx8) 4800/5600 down 0.09% and 0.31%, respectively, amid quiet trading. Track whether node migration, bit supply and customer inventory accelerate ahead of demand."},"impact":{"zh":"高","en":"High"},"direction":"neutral"},
+    {"title":{"zh":"价格分化与库存是否重建","en":"Pricing divergence and inventory rebuild"},"detail":{"zh":"TrendForce 预计 3Q26 传统 DRAM 合约价环比涨幅放缓至 13%–18%；最新现货更新中 DDR4 1Gx8 3200 上涨 1.78%，但 DDR5 采购量有限。继续跟踪先进节点迁移、位供给和客户库存是否先于需求加速。","en":"TrendForce expects conventional DRAM contract-price growth to moderate to 13%–18% QoQ in 3Q26; its latest spot update shows DDR4 1Gx8 3200 up 1.78% while DDR5 volumes remain limited. Track whether node migration, bit supply and customer inventory accelerate ahead of demand."},"impact":{"zh":"高","en":"High"},"direction":"neutral"},
     {"title":{"zh":"DRAM 实际持仓与权重变化","en":"Actual DRAM holdings and weight changes"},"detail":{"zh":"基金为主动管理，至少按季度核对成分与地域集中度。","en":"The ETF is actively managed; verify constituents and geographic concentration at least quarterly."},"impact":{"zh":"中","en":"Medium"},"direction":"neutral"}
   ],
   "risks": [
