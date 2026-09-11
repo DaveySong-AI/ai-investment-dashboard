@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-09-11",
+  "kind": "daily",
+  "asOf": "2026-09-11T08:32:30+08:00",
+  "readingMinutes": 8,
+  "editionLabel": {"zh":"2026 年 9 月 11 日 · AI 技术与行业简报","en":"September 11, 2026 · AI technology and industry briefing"},
+  "headline": {"zh":"企业 AI 的落地重心转向数据边界、主权部署与可复用基础设施","en":"Enterprise AI shifts toward data boundaries, sovereign deployment and reusable infrastructure"},
+  "summary": {"zh":"本窗口没有重磅基础模型发布，但企业采用的“最后一公里”出现了清晰信号：OpenAI 将 Work/Codex 扩展到受既有权限约束的连接数据与文件；NVIDIA 则把开放模型、专用推理芯片和物理 AI 接入共同的部署栈。它们都不是已经验证的生产率承诺，却提高了数据治理、互操作性和端到端验证在采购中的权重。","en":"There was no major foundation-model launch in this window, but enterprise adoption’s last mile sent a clear signal: OpenAI extended Work/Codex to connected data and files bounded by existing permissions, while NVIDIA connected open models, specialized inference silicon and physical AI to shared deployment stacks. These are not validated productivity promises, but they raise the importance of data governance, interoperability and end-to-end validation in procurement."},
+  "coverage": {"windowStart":"2026-09-10T08:32:30+08:00","windowEnd":"2026-09-11T08:32:30+08:00","note":{"zh":"仅纳入窗口内发布或更新的一手材料。供应商对性能、节省成本或市场规模的表述被标作背景，未作为独立事实结论。","en":"Only first-party material published or updated in the window is included. Vendor claims about performance, savings or market size are treated as context, not independent factual conclusions."}},
+  "executive": {
+    "signal": {"zh":"企业 AI 的竞争点正从“能否调用模型”转向“能否在权限、数据驻留、供应链和真实工作流约束下可靠运行”。连接器、开放模型和共享机架能缩短集成路径，但也会把身份、数据血缘、回滚和责任边界变成首要工程问题。","en":"Enterprise AI competition is moving from whether a model can be called to whether it can run reliably under constraints of permissions, data residency, supply chains and real workflows. Connectors, open models and shared racks can shorten integration, but make identity, data lineage, rollback and accountability first-order engineering problems."},
+    "watch": {"zh":"关注 OpenAI 的 Data 插件和文件连接器在不同计划、区域与管理员策略下的实际可用性；同时关注 NVIDIA/Palantir 与 d-Matrix 的公告能否给出可审计的部署性能、成本与故障处理证据。","en":"Watch actual availability of OpenAI’s Data plugin and file connectors across plans, regions and admin policies; also watch whether NVIDIA/Palantir and d-Matrix announcements produce auditable evidence on deployment performance, cost and failure handling."}
+  },
+  "items": [
+    {
+      "id": "openai-data-plugin-work-codex",
+      "category": {"zh":"企业 Agent 与数据连接","en":"Enterprise agents & data connections"},
+      "status": "confirmed",
+      "title": {"zh":"OpenAI 在 ChatGPT Work 与 Codex 推出 Data 插件","en":"OpenAI introduces the Data plugin in ChatGPT Work and Codex"},
+      "what": {"zh":"【确认事实】OpenAI 于 9 月 10 日在产品更新中宣布，Data 插件可让 ChatGPT Work 和 Codex 查询已连接的业务数据、调查变化，并生成交互式仪表板或报告。公司称连接的数据源可能需要单独配置或授权，查询沿用用户已有账户权限。","en":"[Confirmed fact] In its September 10 product update, OpenAI announced a Data plugin that lets ChatGPT Work and Codex query connected business data, investigate changes, and create interactive dashboards or reports. It says connected sources may need separate setup or authorization and that queries use the user’s existing account permissions."},
+      "why": {"zh":"这把 Agent 的价值链从“上传文件后回答”推向受权限约束的实时业务上下文。真正的门槛因而不只在模型质量，而在连接器的最小权限、管理员可见性、引用可追溯性和跨系统查询范围。","en":"This moves the agent value chain from answering over uploaded files toward live business context bounded by permissions. The real bar is therefore not model quality alone, but least privilege, administrator visibility, citation traceability and the scope of cross-system queries."},
+      "implication": {"zh":"【分析】技术团队应先以只读、低影响数据集做试点，记录每次查询的身份、来源、过滤条件和输出用途；管理者应把连接器审批、数据分类与撤销访问的演练纳入上线验收。","en":"[Analysis] Technical teams should begin with read-only, low-impact datasets and log identity, sources, filters and output use for each query; leaders should include connector approval, data classification and access-revocation drills in acceptance criteria."},
+      "sources": [{"label":"OpenAI Help · ChatGPT release notes","url":"https://help.openai.com/en/articles/6825453-chatgpt-release-notes","type":"primary"}]
+    },
+    {
+      "id": "openai-onegov-2026",
+      "category": {"zh":"公共部门采用与采购","en":"Public-sector adoption & procurement"},
+      "status": "confirmed",
+      "title": {"zh":"OpenAI 与美国 GSA 公布覆盖多级政府的 OneGov 协议","en":"OpenAI and the U.S. GSA announce a OneGov agreement spanning eligible governments"},
+      "what": {"zh":"【确认事实】OpenAI 于 9 月 10 日称，其与美国总务署（GSA）达成新的多年 OneGov 协议，并将同一优惠延伸至符合条件的联邦、州、地方和部落政府。公告列出免月度许可费、用量费用五折且无最低承诺，以及培训与采用支持；协议期为 2026 年 10 月 1 日至 2028 年 12 月 31 日，使用费仍然适用。","en":"[Confirmed fact] On September 10, OpenAI said it reached a new multi-year OneGov agreement with the U.S. General Services Administration and will extend the same offer to eligible federal, state, local and tribal governments. The announcement lists no monthly license fee, 50% off usage with no minimum commitment, and training/adoption support; it runs October 1, 2026 through December 31, 2028, while usage charges still apply."},
+      "why": {"zh":"价格与采购路径往往决定公共部门能否从试用转向规模部署。该公告确认了商用条件与覆盖范围，但没有证明具体部门的安全审批、使用质量或公共服务成效。","en":"Pricing and procurement paths often determine whether public-sector use progresses from trials to scale. The announcement confirms commercial terms and scope, but does not demonstrate a given agency’s security approval, quality of use or public-service outcomes."},
+      "implication": {"zh":"【分析】公共部门与受监管买方应将这类优惠与独立的资料保留、模型评估、人工复核、事件响应和退出条款分开评估；折扣不应替代总拥有成本与风险评估。","en":"[Analysis] Public-sector and regulated buyers should assess such offers separately from requirements for record retention, model evaluation, human review, incident response and exit rights; a discount should not substitute for total-cost or risk assessment."},
+      "sources": [{"label":"OpenAI Academy · Expanding AI Access for Public Servants","url":"https://academy.openai.com/public/clubs/government/blogs/expanding-ai-access-for-public-servants","type":"primary"}]
+    },
+    {
+      "id": "nvidia-palantir-sovereign-supply-chain",
+      "category": {"zh":"主权 AI 与产业运营","en":"Sovereign AI & industrial operations"},
+      "status": "confirmed",
+      "title": {"zh":"NVIDIA 与 Palantir 宣布将 Nemotron 接入供应链主权 AI 栈","en":"NVIDIA and Palantir announce a Nemotron-based sovereign AI stack for supply chains"},
+      "what": {"zh":"【确认事实】NVIDIA 与 Palantir 于 9 月 10 日宣布合作，将 NVIDIA Nemotron 开放模型接入 Palantir Foundry/AIP 与其 Ontology，首个部署面向 NVIDIA 自身供应链。公告称该参考架构可在云端或本地运行，且企业可用自身数据后训练模型；最终决策仍由供应链专家控制。","en":"[Confirmed fact] On September 10, NVIDIA and Palantir announced a collaboration bringing NVIDIA Nemotron open models into Palantir Foundry/AIP and its Ontology, with the first deployment aimed at NVIDIA’s own supply chain. The announcement says the reference architecture can run in cloud or on premises and enterprises can post-train models on their own data; supply-chain experts retain final decisions."},
+      "why": {"zh":"供应链是高价值、强约束且数据高度敏感的 Agent 场景。把模型、业务语义层、优化器和部署地点连在一起，说明“主权 AI”正在由数据不出域的口号变成具体架构选择；但公告中的加速和优化效果仍属前瞻表述。","en":"Supply chains are high-value, constrained and data-sensitive agent settings. Connecting a model, business-semantic layer, optimizer and deployment location shows sovereign AI becoming an architectural choice rather than a data-residency slogan; claimed acceleration and optimization benefits remain forward-looking statements."},
+      "implication": {"zh":"【分析】实施团队应把每项模型建议映射到可复现的业务规则、输入快照、优化约束和人工批准人；管理者应要求在供应中断、数据缺失和错误建议时证明可回退与责任分工。","en":"[Analysis] Implementation teams should map every model recommendation to reproducible business rules, input snapshots, optimization constraints and a human approver; leaders should require evidence of rollback and accountability under supply disruptions, missing data and wrong recommendations."},
+      "sources": [{"label":"NVIDIA · NVIDIA and Palantir Bring Sovereign Intelligence to Critical Supply Chains","url":"https://nvidianews.nvidia.com/news/nvidia-and-palantir-bring-sovereign-intelligence-to-critical-supply-chains","type":"primary"}]
+    },
+    {
+      "id": "dmatrix-nvlink-fusion-raptor",
+      "category": {"zh":"推理芯片与基础设施","en":"Inference silicon & infrastructure"},
+      "status": "confirmed",
+      "title": {"zh":"d-Matrix 计划以 NVLink Fusion 将 Raptor XPU 接入 NVIDIA 机架级平台","en":"d-Matrix plans to connect Raptor XPUs to NVIDIA’s rack-scale platform through NVLink Fusion"},
+      "what": {"zh":"【确认事实】NVIDIA 于 9 月 10 日称，推理芯片公司 d-Matrix 将采用 NVLink Fusion，把下一代 Raptor XPU 连接到 NVIDIA 的 NVLink、Spectrum-X、MGX 机架架构及 AI 平台。公告称该方案也计划接入 Vera CPU、ConnectX-9、BlueField-4 和 Spectrum-X 网络，并可与 GPU 系统并列用于解耦推理。","en":"[Confirmed fact] On September 10, NVIDIA said inference-chip company d-Matrix will use NVLink Fusion to connect its next-generation Raptor XPU to NVIDIA’s NVLink, Spectrum-X, MGX rack architecture and AI platform. The announcement says the planned design also integrates Vera CPUs, ConnectX-9, BlueField-4 and Spectrum-X networking, and can sit alongside GPU systems for disaggregated inference."},
+      "why": {"zh":"专用推理芯片的商业化瓶颈常在网络、供电、散热、软件和供应链验证，而非芯片本身。共享机架与互连可降低集成摩擦，也可能提高对 NVIDIA 系统边界和路线图的依赖。","en":"Specialized inference chips are often commercialized through networking, power, cooling, software and supply-chain validation—not the chip alone. A shared rack and interconnect can reduce integration friction while potentially increasing dependence on NVIDIA’s system boundary and roadmap."},
+      "implication": {"zh":"【分析】基础设施团队应把“可接入”与“可替代”分开测试：比较端到端每 token 成本、尾延迟、故障域、调度迁移和供应商退出成本，而非只比较峰值吞吐。","en":"[Analysis] Infrastructure teams should test “integrable” separately from “substitutable”: compare end-to-end cost per token, tail latency, failure domains, scheduling migration and vendor-exit cost—not only peak throughput."},
+      "sources": [{"label":"NVIDIA · d-Matrix Adopts NVIDIA NVLink Fusion for Rack-Scale XPU Deployment","url":"https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/","type":"primary"}]
+    },
+    {
+      "id": "skild-s1-video-robotics",
+      "category": {"zh":"具身 AI 与机器人","en":"Physical AI & robotics"},
+      "status": "confirmed",
+      "title": {"zh":"NVIDIA 介绍 Skild S1 以单段视频示范学习新机器人任务的部署路径","en":"NVIDIA outlines Skild S1’s deployment path for learning new robot tasks from one video"},
+      "what": {"zh":"【确认事实】NVIDIA 于 9 月 10 日发布 Skild AI S1 的技术与部署介绍，称该机器人基础模型在前一周发布，可将操作员录制的视频作为提示来执行未见过的长程任务，而无需为每个任务重新训练。文章还称 Skild、NVIDIA 与 Foxconn 正在为 NVIDIA Blackwell 系统的高精度装配部署双臂机械臂。文章所列成功率、节省训练样本和收入数据均为 Skild 的测试或估计。","en":"[Confirmed fact] On September 10, NVIDIA published a technical and deployment overview of Skild AI’s S1 robot foundation model, saying it launched the previous week and can use an operator-recorded video as a prompt for unseen long-horizon tasks without retraining for every task. It also says Skild, NVIDIA and Foxconn are deploying dual-arm manipulators for precision assembly of NVIDIA Blackwell systems. The success rates, saved training examples and revenue figures cited are Skild tests or estimates."},
+      "why": {"zh":"从视频示范到实际执行若能稳定复现，会减少工厂换线时的数据收集与再编程负担。但具身系统的价值必须由场地、物料变异、安全互锁和人工接管条件下的端到端成功率来验证。","en":"If reliably reproducible, moving from video demonstration to execution could reduce data collection and reprogramming during factory changeovers. But the value of embodied systems must be validated by end-to-end success under site conditions, material variation, safety interlocks and human takeover."},
+      "implication": {"zh":"【分析】机器人团队应把视频提示纳入受控变更流程：限定动作区域与速度、仿真验证后再上机，并按任务记录成功率、近失事件、恢复时间和人工接管原因。","en":"[Analysis] Robotics teams should put video prompting into a controlled change process: constrain work zones and speed, validate in simulation before hardware, and log success, near misses, recovery time and reasons for human takeover per task."},
+      "sources": [{"label":"NVIDIA · Skild AI Taps NVIDIA Physical AI to Teach Robots New Tasks From a Single Video","url":"https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/","type":"primary"}]
+    }
+  ],
+  "radar": [
+    {
+      "id": "openai-library-enterprise-files",
+      "category": {"zh":"企业知识与文件治理","en":"Enterprise knowledge & file governance"},
+      "status": "confirmed",
+      "title": {"zh":"Box、Dropbox 与 SharePoint 加入 ChatGPT Library","en":"Box, Dropbox and SharePoint join ChatGPT Library"},
+      "summary": {"zh":"【确认事实】OpenAI 9 月 10 日称，三项服务加入 Library，用户可浏览、检索并在对话中引用已连接的文件和文件夹；现有文件权限与工作区控制继续适用，Web 端正向多个付费计划逐步开放。资料可追溯至原始来源，但这不等同于已证明跨源检索或权限同步在所有部署中无误。","en":"[Confirmed fact] On September 10, OpenAI said the three services joined Library, letting users browse, search and cite connected files and folders in conversation; existing file permissions and workspace controls continue to apply, with web rollout to several paid plans. Content remains traceable to its original source, but this does not prove cross-source retrieval or permission synchronization is error-free in every deployment."},
+      "sources": [{"label":"OpenAI Help · ChatGPT release notes","url":"https://help.openai.com/en/articles/6825453-chatgpt-release-notes","type":"primary"}]
+    },
+    {
+      "id": "nvidia-robotaxi-platform-overview",
+      "category": {"zh":"自动驾驶与仿真","en":"Autonomous driving & simulation"},
+      "status": "confirmed",
+      "title": {"zh":"NVIDIA 发布机器人出租车训练、仿真与车端计算栈概览","en":"NVIDIA publishes an overview of its robotaxi training, simulation and in-vehicle stack"},
+      "summary": {"zh":"【确认事实】NVIDIA 于 9 月 10 日概述其三计算机架构，涵盖 DGX 训练、Omniverse/Cosmos 仿真验证和 DRIVE Hyperion 车端计算，并列举多家合作方。该文是平台概览，不是新的车辆获批、商业运营规模或安全性能的独立证明；部署决策仍需逐项目核验监管与安全证据。","en":"[Confirmed fact] On September 10, NVIDIA outlined its three-computer architecture spanning DGX training, Omniverse/Cosmos simulation and validation, and DRIVE Hyperion in-vehicle computing, listing multiple partners. The post is a platform overview, not independent proof of new vehicle approvals, commercial scale or safety performance; deployment decisions still require project-specific regulatory and safety evidence."},
+      "sources": [{"label":"NVIDIA · How the World’s Robotaxi Leaders Are Building With NVIDIA Technologies","url":"https://blogs.nvidia.com/blog/robotaxi-leaders-full-stack-open-platform/","type":"primary"}]
+    },
+    {
+      "id": "openai-onegov-adoption-support",
+      "category": {"zh":"行业采用信号","en":"Industry adoption signal"},
+      "status": "confirmed",
+      "title": {"zh":"OneGov 协议附带培训与用量管理支持","en":"The OneGov agreement includes training and usage-management support"},
+      "summary": {"zh":"【确认事实】OpenAI 的 OneGov 公告把 onboarding、研讨会、用量与支出管理指南、学习资源列入方案。该安排反映供应商将采用支持与定价一并产品化；成效仍取决于各机构的采购、信息安全、人员培训和衡量机制。","en":"[Confirmed fact] OpenAI’s OneGov announcement lists onboarding, webinars, usage-and-spend guidance and learning resources. The arrangement reflects vendors packaging adoption support alongside pricing; outcomes still depend on each institution’s procurement, information security, staff training and measurement practices."},
+      "sources": [{"label":"OpenAI Academy · Expanding AI Access for Public Servants","url":"https://academy.openai.com/public/clubs/government/blogs/expanding-ai-access-for-public-servants","type":"primary"}]
+    },
+    {
+      "id": "nvidia-physical-ai-simulation-loop",
+      "category": {"zh":"机器人开发工具链","en":"Robotics development toolchain"},
+      "status": "confirmed",
+      "title": {"zh":"Skild 的介绍强调数据、仿真、训练与部署的闭环","en":"Skild overview emphasizes a data–simulation–training–deployment loop"},
+      "summary": {"zh":"【确认事实】NVIDIA 称 Skild 在训练和验证中使用 Cosmos、Omniverse、Isaac Sim 与 Isaac Lab，并与 NVIDIA 共同开发 GPU 加速的接触/抓取仿真求解器。公告所说“将向所有开发者提供”属于未来计划；当前可确认的是合作与工具链方向。","en":"[Confirmed fact] NVIDIA says Skild uses Cosmos, Omniverse, Isaac Sim and Isaac Lab for training and validation, and is jointly developing GPU-accelerated contact/grasp simulation solvers with NVIDIA. The stated intention to make solvers available to all developers is future-facing; the collaboration and toolchain direction are what is currently confirmed."},
+      "sources": [{"label":"NVIDIA · Skild AI Taps NVIDIA Physical AI to Teach Robots New Tasks From a Single Video","url":"https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/","type":"primary"}]
+    }
+  ],
+  "tryToday": [
+    {"zh":"为一个受控数据集试用 Agent 连接器：验证身份透传、最小权限、来源引用、日志保留与撤销访问。","en":"Pilot an agent connector on one controlled dataset: verify identity propagation, least privilege, source citations, log retention and access revocation."},
+    {"zh":"对一项“主权 AI”方案画出从原始数据到建议、批准、执行和回滚的责任图，并为每个节点指定证据与负责人。","en":"Draw an accountability map for one sovereign-AI proposal—from raw data to recommendation, approval, execution and rollback—and assign evidence and an owner to every node."},
+    {"zh":"评估推理或机器人平台时，建立端到端验收表：成本、尾延迟、故障域、人工接管、安全限制和供应商退出路径。","en":"When evaluating an inference or robotics platform, create an end-to-end acceptance sheet covering cost, tail latency, failure domains, human takeover, safety limits and vendor exit paths."}
+  ]
+}
