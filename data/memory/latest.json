@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-09-12",
+  "asOf": "2026-09-13",
   "instrument": {
     "label": {"zh":"用户基准","en":"User reference"},
     "name": {"zh":"Roundhill Memory ETF（DRAM；用户输入：DRAM.A）","en":"Roundhill Memory ETF (DRAM; user reference: DRAM.A)"},
@@ -9,7 +9,7 @@
   },
   "signals": [
     {"label":{"zh":"需求","en":"Demand"},"value":{"zh":"结构性强劲，现货流动性偏弱","en":"Structurally strong, spot liquidity weak"},"detail":{"zh":"TrendForce 估算 2Q26 DRAM 行业收入环比增长 59.5%；9 月 11 日现货页显示 DDR4 8Gb (1Gx8) 3200 日跌 0.14%、DDR5 16Gb (2Gx8) 4800/5600 持平。HBM、服务器 DRAM 与企业级 SSD 仍是关键高附加值需求端，但日度现货报价不是出货或盈利的替代指标。","en":"TrendForce estimates 2Q26 DRAM industry revenue rose 59.5% QoQ; its September 11 spot page showed DDR4 8Gb (1Gx8) 3200 down 0.14% and DDR5 16Gb (2Gx8) 4800/5600 unchanged. HBM, server DRAM and enterprise SSD remain key high-value demand vectors, but daily spot quotes are not substitutes for shipment or earnings evidence."}},
-    {"label":{"zh":"供给","en":"Supply"},"value":{"zh":"供给增速仍落后于需求","en":"Supply growth still lags demand"},"detail":{"zh":"TrendForce 指出供应商库存处于历史低位、增量供给主要投向服务器；先进节点迁移、HBM 良率与封装仍是主要约束。","en":"TrendForce says supplier inventories remain historically low and incremental supply is mainly allocated to servers; advanced-node migration, HBM yield and packaging remain key constraints."}},
+    {"label":{"zh":"供给","en":"Supply"},"value":{"zh":"供给增速仍落后于需求","en":"Supply growth still lags demand"},"detail":{"zh":"TrendForce 指出供应商库存处于历史低位、增量供给主要投向服务器；先进节点迁移、HBM 良率与封装仍是主要约束。Samsung 计划于 2028 年把 High NA EUV 导入未来 DRAM 高量产，这是远期制造路线，并非当前供给变化。","en":"TrendForce says supplier inventories remain historically low and incremental supply is mainly allocated to servers; advanced-node migration, HBM yield and packaging remain key constraints. Samsung plans to introduce High NA EUV into future DRAM high-volume manufacturing in 2028; this is a long-dated manufacturing roadmap, not a current supply change."}},
     {"label":{"zh":"市场结构","en":"Market structure"},"value":{"zh":"集中度高，周期性仍在","en":"Concentrated, still cyclical"},"detail":{"zh":"AI 可改善产品组合，但不能消除库存、扩产与价格回落构成的周期风险。","en":"AI can improve mix but does not remove the cycle of inventory, capacity additions and price reversals."}}
   ],
   "map": [
