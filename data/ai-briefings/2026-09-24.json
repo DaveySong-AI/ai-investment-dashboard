@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-09-24",
+  "kind": "daily",
+  "asOf": "2026-09-24T08:38:48+08:00",
+  "readingMinutes": 8,
+  "editionLabel": {"zh":"2026 年 9 月 24 日 · AI 技术与行业简报","en":"September 24, 2026 · AI technology and industry briefing"},
+  "headline": {"zh":"AI 的连续性正从云端记忆延伸到浏览器控制面、弹性推理与可穿戴入口","en":"AI continuity extends from private cloud memory to browser controls, elastic inference and wearable entry points"},
+  "summary": {"zh":"本窗口的可信发布围绕“持续运行的 AI”展开：Google DeepMind 描述私有服务器端记忆的技术路径，Google Cloud 将受控 Agent 工作流与规模弹性下沉到浏览器和 GKE，Meta 则把个人 Agent 带到眼镜。共同挑战是把连续上下文和自动行动与可验证隐私、权限边界、冷启动与人类控制一同交付。","en":"Credible releases in this window center on continuously operating AI: Google DeepMind describes a path for private server-side memory, Google Cloud brings governed agent workflows and elasticity into browsers and GKE, while Meta puts a personal agent into glasses. The shared challenge is delivering persistent context and automated action alongside verifiable privacy, permission boundaries, cold-start behavior and human control."},
+  "coverage": {"windowStart":"2026-09-23T08:38:48+08:00","windowEnd":"2026-09-24T08:38:48+08:00","note":{"zh":"仅纳入带明确日期的公开一手材料。安全架构、产品性能、功能可用范围和上线时间均按发布方陈述处理；它们不替代独立安全评估、容量测试或地区/租户级可用性核验。","en":"Only public first-party material with explicit dates is included. Security architecture, product performance, availability and rollout timing are treated as publisher-reported; they do not replace independent security assessment, capacity testing or region- and tenant-level availability verification."}},
+  "executive": {
+    "signal": {"zh":"AI 产品的竞争正由“单次回答”转向“持续状态与持续行动”：记忆要跨设备，Agent 要进入日常端点，推理服务要能随工作负载归零再恢复。越接近个人数据、企业权限和物理世界，控制面越必须可审计、可撤回并可在故障时安全降级。","en":"AI-product competition is shifting from one-off answers to persistent state and action: memory must span devices, agents must enter daily endpoints, and inference services must scale down to zero and recover. The closer systems get to personal data, enterprise permissions and the physical world, the more their control plane must be auditable, reversible and safe under failure."},
+    "watch": {"zh":"关注 Google Private AI Compute 的可验证软件记录、独立审计与记忆删除/恢复语义；同时以真实流量验证 GKE 从零扩容时的尾延迟和容量缓冲成本。对于 Meta 眼镜与浏览器 Agent，应优先核查唤醒、录入、访问第三方服务及通知呈现时的用户确认与权限收回。","en":"Watch Google Private AI Compute’s verifiable software record, independent audit and semantics for memory deletion and recovery; validate GKE tail latency and capacity-buffer cost when scaling from zero with real traffic. For Meta glasses and browser agents, prioritize user confirmation and revocation around wake-up, capture, third-party access and notification display."}
+  },
+  "items": [
+    {
+      "id": "google-private-ai-compute-memory",
+      "category": {"zh":"隐私计算与 AI 记忆","en":"Private computing & AI memory"},
+      "status": "confirmed",
+      "title": {"zh":"Google DeepMind 介绍 Private AI Compute 的私有服务器端记忆","en":"Google DeepMind details private server-side memory for Private AI Compute"},
+      "what": {"zh":"【确认事实】Google DeepMind 于 9 月 23 日说明将为 Private AI Compute 加入私有、服务器端的持久记忆，以支持跨设备连续上下文。其描述中，设备通过认证的端到端加密通道访问受保护的隔离云环境，数据仅在隔离内存中暂时解密处理，随后保存新上下文并立即重新加密；Google 同时称将发布服务器软件的防篡改公开记录和独立网络安全审计更新。","en":"[Confirmed fact] On September 23, Google DeepMind described adding private, persistent server-side memory to Private AI Compute for cross-device continuity. In its design, a device reaches a protected isolated cloud environment over an authenticated end-to-end encrypted channel; data is temporarily decrypted only in isolated memory, new context is saved and immediately re-encrypted. Google also says it will publish a tamper-proof public record of server software and an independent cybersecurity-audit update."},
+      "why": {"zh":"持久记忆能减少跨设备使用时反复提供上下文，却把记忆保留、删除、恢复和服务器完整性变成核心产品风险。技术上“端到端加密”并不自动回答谁能验证运行代码、何时解密及数据如何从备份中消失。","en":"Persistent memory can reduce repeated context entry across devices, but makes retention, deletion, recovery and server integrity core product risks. ‘End-to-end encryption’ alone does not answer who can verify running code, when decryption occurs or how data disappears from backups."},
+      "implication": {"zh":"【分析】采购和安全团队应把记忆功能纳入数据生命周期评审：验证用户可见的删除与导出路径、设备认证、密钥轮换、审计证据和故障恢复；以威胁模型而非产品名比较云端记忆方案。","en":"[Analysis] Procurement and security teams should put memory features through data-lifecycle review: verify user-visible deletion and export paths, device authentication, key rotation, audit evidence and disaster recovery. Compare cloud-memory approaches by threat model, not product name."},
+      "sources": [{"label":"Google DeepMind · Advancing Private AI Compute with secure server-side memory","url":"https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/","type":"primary"}]
+    },
+    {
+      "id": "google-chrome-enterprise-agent-controls",
+      "category": {"zh":"企业 Agent 治理","en":"Enterprise agent governance"},
+      "status": "confirmed",
+      "title": {"zh":"Google 为 Gemini in Chrome 描述受 IT 审核的 Skills 库与浏览器 DLP 路径","en":"Google describes IT-vetted Skills and browser DLP for Gemini in Chrome"},
+      "what": {"zh":"【确认事实】Google Cloud 于 9 月 23 日称，trusted tester 计划中的 IT 团队可将预配置、经 IT 审核的 AI Skills 发布到专用库，供受管用户发现和部署标准化工作流。文章还称 Chrome Enterprise Premium 将推出在复制触发点检测并阻止敏感记录复制的 DLP 规则，并已增强 GenAI 使用报告，使 IT 人员可从报告中阻止高风险应用、更新策略或引导至获批替代品。","en":"[Confirmed fact] On September 23, Google Cloud said IT teams in its trusted-tester program can publish preconfigured, IT-vetted AI Skills to a dedicated library for managed users to discover and deploy standardized workflows. The post also says Chrome Enterprise Premium will add DLP rules that detect and block copies of sensitive records at the copy trigger, and that GenAI reporting has been enhanced so IT can block risky apps, update policy or redirect users to approved alternatives from the report."},
+      "why": {"zh":"把 Agent 放进浏览器会让工作流更易用，也会把数据复制、第三方站点权限和隐式自动化带进安全边界。集中 Skills 库和 DLP 是控制面的一部分，但只有在准入、审查、日志和例外机制齐备时才会降低总体风险。","en":"Putting agents in the browser makes workflows easier, but brings data copying, third-party permissions and implicit automation into the security boundary. A central Skills library and DLP are parts of the control plane; they reduce overall risk only with admission, review, logging and exception processes."},
+      "implication": {"zh":"【分析】企业应为每个发布的 Skill 指定所有者、数据分类、允许域名、工具权限和回滚条件；对复制拦截先进行误报/漏报演练，并保留人工申诉与紧急业务例外。","en":"[Analysis] Enterprises should assign every published Skill an owner, data classification, allowed domains, tool permissions and rollback criteria. Test copy blocking for false positives and negatives before rollout, while retaining human appeal and urgent-business exceptions."},
+      "sources": [{"label":"Google Cloud · Secure, intelligent experiences across every endpoint","url":"https://cloud.google.com/blog/products/chrome-enterprise/secure-intelligent-experiences-across-every-endpoint","type":"primary"}]
+    },
+    {
+      "id": "google-gke-scale-to-zero",
+      "category": {"zh":"AI 基础设施与推理","en":"AI infrastructure & inference"},
+      "status": "confirmed",
+      "title": {"zh":"Google Cloud 为 GKE 1.37 增加原生 scale-to-zero 能力","en":"Google Cloud adds native scale-to-zero capabilities to GKE 1.37"},
+      "what": {"zh":"【确认事实】Google Cloud 于 9 月 23 日宣布 GKE 1.37 的原生 scale-to-zero 功能：工作负载可缩至零副本、停止消耗资源，并在需求恢复时借助 capacity buffers 重启。文章称该机制基于 HPA 的 `minReplicas: 0` 和 AutoscalingMetric，可直接读取 Cloud Monitoring 或 Google Managed Service for Prometheus 的外部信号，而无需第三方 adapter。","en":"[Confirmed fact] On September 23, Google Cloud announced native scale-to-zero in GKE 1.37: workloads can scale to zero replicas and stop consuming resources, then restart on capacity buffers when demand returns. The post says the mechanism combines HPA `minReplicas: 0` with AutoscalingMetric, directly reading external signals from Cloud Monitoring or Google Managed Service for Prometheus without a third-party adapter."},
+      "why": {"zh":"推理和 Agent 服务的空闲容量会直接转化为成本，而从零恢复会损害响应体验。把弹性纳入控制平面可减少外部组件，但不能消除镜像拉取、模型加载、节点供给和突发队列造成的冷启动。","en":"Idle capacity in inference and agent services becomes direct cost, while restoring from zero can hurt responsiveness. Bringing elasticity into the control plane can reduce external components, but cannot eliminate cold starts from image pulls, model loading, node provisioning and burst queues."},
+      "implication": {"zh":"【分析】为每种模型和流量形态设定可接受的冷启动预算，记录从指标触发到首个有效响应的全链路时间；把 capacity buffer 成本、最大并发、降级队列与多可用区故障场景纳入 SLO。","en":"[Analysis] Set an acceptable cold-start budget for each model and traffic shape, measuring the full path from metric trigger to first valid response. Include capacity-buffer cost, maximum concurrency, degraded queues and multi-zone failure scenarios in SLOs."},
+      "sources": [{"label":"Google Cloud · GKE becomes more elastic with scale to zero","url":"https://cloud.google.com/blog/products/containers-kubernetes/gke-adds-native-scale-to-zero-capabilities","type":"primary"}]
+    },
+    {
+      "id": "meta-muse-ai-glasses",
+      "category": {"zh":"个人 AI 与可穿戴设备","en":"Personal AI & wearables"},
+      "status": "confirmed",
+      "title": {"zh":"Meta 将 Muse 个人 AI Agent 接入其 AI 眼镜产品线","en":"Meta brings the Muse personal AI agent to its AI-glasses lineup"},
+      "what": {"zh":"【确认事实】Meta 于 9 月 23 日在 Connect 宣布将 Muse 个人 AI Agent 带入 AI 眼镜，用于免手持的日程、习惯和长期目标行动计划等协助；同日推出 Ray-Ban Meta Audio，并称其为首款 audio glasses。Meta 表示该款产品可预订，起价 349 美元、计划 10 月 13 日发货；规格和地区可用性以其发布节奏为准。","en":"[Confirmed fact] At Connect on September 23, Meta announced that its Muse personal AI agent is coming to AI glasses for hands-free assistance with calendars, habits and long-term-goal action plans; it also introduced Ray-Ban Meta Audio as its first audio glasses. Meta says the product is available to preorder from $349 and is planned to ship October 13; specifications and regional availability follow its rollout schedule."},
+      "why": {"zh":"眼镜把个人 Agent 的触发和反馈从屏幕延伸到环境中，可能降低使用摩擦，也会提高意外唤醒、环境录入、旁观者隐私和高频提醒的风险。可穿戴入口应按“始终在身边”的权限模型审查，而不是按普通 App 审查。","en":"Glasses move personal-agent invocation and feedback from a screen into the environment, potentially lowering friction while raising risks of accidental wake-up, environmental capture, bystander privacy and high-frequency nudges. Wearable entry points should be reviewed with an ‘always with you’ permission model, not as ordinary apps."},
+      "implication": {"zh":"【分析】在试点前，应测试唤醒、录音/摄像指示、日历与第三方连接权限、通知静默期和一键关闭；针对公共场所、会议和敏感工作环境设计明确的禁用与告知规则。","en":"[Analysis] Before a pilot, test wake-up, recording/camera indicators, calendar and third-party permissions, notification quiet hours and one-action shutdown. Design explicit disablement and notice rules for public spaces, meetings and sensitive work settings."},
+      "sources": [{"label":"Meta · Ray-Ban Meta Audio and Muse","url":"https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/","type":"primary"}]
+    }
+  ],
+  "radar": [
+    {
+      "id": "google-alphaevolve-evaluator-design",
+      "category": {"zh":"Agent 编程与评估","en":"Agentic coding & evaluation"},
+      "status": "analysis",
+      "title": {"zh":"Google Cloud 以 AlphaEvolve 视频优化示例强调评估器设计","en":"Google Cloud uses an AlphaEvolve video example to stress evaluator design"},
+      "summary": {"zh":"【背景】Google Cloud 于 9 月 23 日展示 AlphaEvolve 的云端生成/本地评估分离模式：Gemini 模型提出代码变体，客户自有的评估器在目标硬件上评分。文章举例说明只奖励延迟会导致候选跳过渲染，因此建议将吞吐与 SSIM 等保真门槛同时设为质量门。该原则可用于任何自动优化 Agent，但具体收益必须在本地基准复验。","en":"[Context] On September 23, Google Cloud showed AlphaEvolve’s split between cloud generation and customer-owned evaluation on target hardware: Gemini models propose code variants while a local evaluator scores them. The post illustrates that rewarding latency alone can make a candidate skip rendering, recommending throughput plus fidelity gates such as SSIM. The principle applies to any optimization agent, but claimed gains require local benchmark replication."},
+      "sources": [{"label":"Google Cloud · Speed up video processing with AlphaEvolve","url":"https://cloud.google.com/blog/topics/developers-practitioners/how-to-speed-up-your-video-processing-with-alphaevolve","type":"primary"}]
+    },
+    {
+      "id": "google-gke-promql-hpa-preview",
+      "category": {"zh":"可观测性与自动扩缩容","en":"Observability & autoscaling"},
+      "status": "confirmed",
+      "title": {"zh":"GKE HPA 增加内置 PromQL 指标查询支持","en":"GKE HPA adds built-in support for PromQL metric queries"},
+      "summary": {"zh":"【确认事实】Google Cloud 于 9 月 23 日宣布 HPA 可通过 Google Managed Service for Prometheus 直接处理 Cloud Monitoring 中的 Prometheus 指标，并以 PromQL 自定义扩缩容触发器，无需第三方 adapter。发布方称 self-hosted Prometheus 仍计划在从 preview 走向 GA 时支持；部署设计应把该限制、查询成本和指标迟到纳入考量。","en":"[Confirmed fact] On September 23, Google Cloud announced that HPA can directly process Prometheus metrics in Cloud Monitoring through Google Managed Service for Prometheus, using PromQL for custom autoscaling triggers without a third-party adapter. It says self-hosted Prometheus support is planned as the feature moves from preview to GA; deployments should account for that limitation, query cost and late-arriving metrics."},
+      "sources": [{"label":"Google Cloud · Built-in PromQL metrics queries in GKE HPA","url":"https://cloud.google.com/blog/products/containers-kubernetes/native-support-for-prometheus-metrics-in-gke","type":"primary"}]
+    },
+    {
+      "id": "meta-rayban-display-features",
+      "category": {"zh":"空间计算与个人 AI","en":"Spatial computing & personal AI"},
+      "status": "confirmed",
+      "title": {"zh":"Meta 扩展 Ray-Ban Display 的导航、Hologram 与区域可用性","en":"Meta expands Ray-Ban Display with navigation, Hologram and regional availability"},
+      "summary": {"zh":"【确认事实】Meta 于 9 月 23 日宣布 Ray-Ban Display 增加免手持骑行/公共交通导航、用于通话的 Hologram、Explore 应用和日历能力，并扩展至英国、加拿大、法国、意大利和德国。部分功能属于 later-this-month 或 early-access 未来上线，不能视为所有用户立即可用。","en":"[Confirmed fact] On September 23, Meta announced hands-free cycling/transit navigation, Hologram for calls, an Explore app and calendar capabilities for Ray-Ban Display, with expansion to the UK, Canada, France, Italy and Germany. Some features are scheduled for later this month or early access, so they should not be treated as immediately available to every user."},
+      "sources": [{"label":"Meta · New features for Meta Ray-Ban Display","url":"https://about.fb.com/news/2026/09/new-features-for-meta-ray-ban-display-navigation-hologram/","type":"primary"}]
+    }
+  ],
+  "tryToday": [
+    {"zh":"为一个带记忆的 AI 功能补一页数据生命周期图：列出采集、加密、解密、保留、导出、删除、备份恢复和独立验证点。","en":"Add a one-page data-lifecycle map for one memory-enabled AI feature: collection, encryption, decryption, retention, export, deletion, backup recovery and independent-verification points."},
+    {"zh":"为一个浏览器 Agent 建立可发布的 Skill 审查表，至少包含所有者、允许域名、工具权限、数据分类、日志、回滚和例外处理。","en":"Create a publishable Skill review sheet for one browser agent covering owner, allowed domains, tool permissions, data classification, logs, rollback and exception handling."},
+    {"zh":"用真实突发流量测试一个 scale-to-zero 推理服务，并报告从指标触发到首个有效响应的 p50/p95/p99 与 capacity-buffer 成本。","en":"Test one scale-to-zero inference service with real burst traffic and report p50/p95/p99 from metric trigger to first valid response, alongside capacity-buffer cost."}
+  ]
+}
